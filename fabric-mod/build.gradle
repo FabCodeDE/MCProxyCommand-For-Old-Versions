@@ -3,11 +3,17 @@ plugins {
     id 'com.modrinth.minotaur' version '2.+'
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
 // Fabric Properties. Check these on https://modmuss50.me/fabric.html
-def minecraft_version='1.19.2'
-def yarn_mappings='1.19.2+build.28'
-def loader_version='0.14.11'
-def fabric_version='0.68.0+1.19.2'
+def minecraft_version='1.18.2'
+def yarn_mappings='1.18.2+build.4'
+def loader_version='0.15.7'
+def fabric_version='0.77.0+1.18.2'
 
 repositories {
     // NOTE This should currently be not needed, but to fiddle around with this dependency issue
@@ -39,7 +45,6 @@ dependencies {
     // But if we do this, then the code for this project does not know fabric-api, so we just declare them
     // as compile time
     modCompileOnly "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-    modCompileOnly "net.fabricmc.fabric-api:fabric-api-deprecated:${fabric_version}"
 
     // NOTE To work with the problems above, place these mods inside the mods folder
     // List of mods:
@@ -67,7 +72,7 @@ modrinth {
     projectId = 'proxy-command'
     versionNumber = project.version
     versionType = project.version.contains('SNAPSHOT') ? 'alpha' : 'release'
-    gameVersions = ['1.19.2']
+    gameVersions = ['1.18.2']
     loaders = ['fabric']
     dependencies {
         required.project 'fabric-api'

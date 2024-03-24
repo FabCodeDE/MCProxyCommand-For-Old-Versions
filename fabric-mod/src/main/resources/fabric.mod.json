@@ -22,8 +22,8 @@
   "depends": {
     "fabricloader": ">=0.14.11",
     "fabric": "*",
-    "minecraft": "1.19.2",
-    "fabricproxy-lite": ">=2.3.0",
-    "crossstitch": ">=0.1.5"
+    "minecraft": "1.18.2",
+    "fabricproxy-lite": ">=1.0.0",
+    "crossstitch": ">=0.1.4"
   }
 }
